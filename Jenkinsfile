@@ -19,7 +19,7 @@ pipeline {
             steps {
                 echo 'Deploying the env using pipeline'
                 sh '''
-                status=`ps -ef | grep telspiel | grep jar | awk '{print $2}'`
+                status=`ps -ef | grep message | grep jar | awk '{print $2}'`
                 if [ -z "$status" ];
                         then echo "Application is NOT running & we're starting now...";
                         else echo "Application is already running & hence killing previous pid :"$status;
@@ -33,7 +33,7 @@ pipeline {
                 }
 
                 sh '''
-                                status=`ps -ef | grep telspiel | grep jar | awk '{print $2}'`
+                                status=`ps -ef | grep message | grep jar | awk '{print $2}'`
                                 if [ -z "$status" ];
                                         then echo "Deployment is unsuccessful...";
                                         else echo "Deployment is Successful...";
